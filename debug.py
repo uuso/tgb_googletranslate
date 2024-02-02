@@ -27,3 +27,9 @@ print(vars(translator.detect('Ваза')))
 # from googletrans import Translator
 # translator = Translator()
 # translator.translate('안녕하세요.')
+
+
+
+# Удаление знаков препинания
+# import string
+# text = text.translate(str.maketrans('','',string.punctuation))

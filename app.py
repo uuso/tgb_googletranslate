@@ -3,10 +3,20 @@ import sys
 import telebot
 from googletrans import Translator
 
+def has_cyrillic(text) -> bool:
+    """Checks if there are any cyrillic symbols in TEXT.
+Cyrillic symbols are doublesized.
+"""
+    return len(text.encode("utf-8", "ignore")) > len (text)
 
+
+try:
+    bot = telebot.TeleBot(os.getenv('TOKEN') or sys.argv[1]) # нужно параметром к запуску передать токен бота, полученный от бота @BotFather
+except Exception as e:
+    print(e)
+    exit()
+    
 translator = Translator()
-bot = telebot.TeleBot(os.getenv('TOKEN') or sys.argv[1])
-lang = {'en', 'ru'}
 
 @bot.message_handler(commands=['start', 'help'])
 def greet(message):
@@ -17,14 +27,12 @@ def greet(message):
 @bot.message_handler()
 def log_all(message):
     text = message.text
-    lang_detected = translator.detect(text).lang
-
-    lang_src = lang_detected if lang_detected in lang else 'en'
-    lang_dst = lang - {lang_src}
-    lang_dst = lang_dst.pop()
-
-    response = translator.translate(text, src=lang_src, dest=lang_dst).text
-    bot.send_message(message.chat.id, response, parse_mode='MarkdownV2')
-
+    lang_src, lang_dst = ('ru', 'en') if has_cyrillic(text) else ('en', 'ru')
+    response = translator.translate(
+                                    text, 
+                                    src=lang_src, 
+                                    dest=lang_dst
+        ).text
+    bot.send_message(message.chat.id, response)
 
 bot.infinity_polling()
