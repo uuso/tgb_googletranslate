@@ -31,6 +31,15 @@ bot = telebot.TeleBot("YOUR_TOKEN")
 bot.remove_webhook()
 bot.set_webhook("Default domain URL")
 ```
+[Alternatively](https://cloud.yandex.ru/ru/docs/functions/tutorials/telegram-bot-serverless#function-bind-bot), you can use `curl` in your terminal:
+```sh
+curl \
+  --request POST \
+  --url https://api.telegram.org/bot<YOUR_TOKEN>/setWebhook \
+  --header 'content-type: application/json' \
+  --data '{"url": "<Default domain URL>"}'
+```
+
 5. Finally, turn on the `Public function` switch in the `Overview` section of your cloud function. From now it works!
 
 ### Useful links

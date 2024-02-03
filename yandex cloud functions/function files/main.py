@@ -27,7 +27,7 @@ def log_all(message):
                                     src=lang_src, 
                                     dest=lang_dst
         ).text
-    bot.send_message(message.chat.id, f'`{response}`', parse_mode='MarkdownV2')
+    bot.reply_to(message, f'`{response}`', parse_mode='MarkdownV2')
 
 if __name__ == '__main__':
     # local tests
