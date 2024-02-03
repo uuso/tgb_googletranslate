@@ -3,7 +3,6 @@ import sys
 import telebot
 from googletrans import Translator
 
-def 
 def has_cyrillic(text) -> bool:
     """Checks if there are any cyrillic symbols in TEXT.
 Cyrillic symbols are doublesized.
