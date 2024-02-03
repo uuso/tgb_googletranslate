@@ -33,6 +33,6 @@ def log_all(message):
                                     src=lang_src, 
                                     dest=lang_dst
         ).text
-    bot.send_message(message.chat.id, response)
+    bot.send_message(message.chat.id, f'`{response}`', parse_mode='MarkdownV2')
 
 bot.infinity_polling()
