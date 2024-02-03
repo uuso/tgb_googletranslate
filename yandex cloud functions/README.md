@@ -46,4 +46,6 @@ curl \
 - https://cloud.yandex.ru/ru/docs/functions/quickstart/create-function/python-function-quickstart
 - https://cloud.yandex.ru/ru/docs/functions/tutorials/telegram-bot-serverless
 - https://cloud.yandex.ru/ru/docs/billing/concepts/serverless-free-tier
-- https://pytba.readthedocs.io/_/downloads/en/4.6.0/pdf/
+- [pyTelegramBotAPI man](https://pytba.readthedocs.io/_/downloads/en/4.6.0/pdf/)
+- [Используем Yandex Cloud Functions в работе с Object Storage @ youtube.com](https://www.youtube.com/watch?v=_d-EPZ-X_Qo)
+- [ycl доступ к статичным файлам через apigw](https://cloud.yandex.com/en/docs/api-gateway/concepts/extensions/object-storage)
