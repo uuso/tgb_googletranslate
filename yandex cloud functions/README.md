@@ -49,3 +49,4 @@ curl \
 - [pyTelegramBotAPI man](https://pytba.readthedocs.io/_/downloads/en/4.6.0/pdf/)
 - [Используем Yandex Cloud Functions в работе с Object Storage @ youtube.com](https://www.youtube.com/watch?v=_d-EPZ-X_Qo)
 - [ycl доступ к статичным файлам через apigw](https://cloud.yandex.com/en/docs/api-gateway/concepts/extensions/object-storage)
+- [github repo by yandex cloud: Serverless TG bot](https://github.com/yandex-cloud-examples/yc-practicum-serverless-telegram-bot/tree/main/steps/03-first-bot-function)
