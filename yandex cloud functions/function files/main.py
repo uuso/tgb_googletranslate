@@ -20,7 +20,7 @@ def greet(message):
 # обработка любого необработанного текстового сообщения
 @bot.message_handler()
 def log_all(message):
-    text = message.text
+    text = message.text.replace('’', "'")
     lang_src, lang_dst = ('ru', 'en') if has_cyrillic(text) else ('en', 'ru')
     response = translator.translate(
                                     text, 
